@@ -15,7 +15,7 @@ bool isExecutableSync(String path, bool isWindows, FileStat getStat(path)) =>
     _isExecutable(path, isWindows, getStat);
 
 _isExecutable(String path, bool isWindows, getStat(path)) =>
-    when(() => getStat(path), (stat) => isExecutableStat(stat, isWindows));
+    when(() => getStat(path), onSuccess: (stat) => isExecutableStat(stat, isWindows));
 
 /// Tests whether the file exists and is executable.
 bool isExecutableStat(FileStat stat, bool isWindows) {

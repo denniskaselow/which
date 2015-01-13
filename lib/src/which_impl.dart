@@ -43,7 +43,6 @@ _which(
         toSequence(candidatePaths),
         (path) => isExecutable(path, isWindows),
         orElse: orElse != null ? orElse : () => _commandNotFound(command, null)),
-    identity,
     onError: (e) => _commandNotFound(command, e));
 
 _commandNotFound(String command, e) {
