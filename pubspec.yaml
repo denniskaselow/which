@@ -1,5 +1,5 @@
 name: which
-version: 0.1.0
+version: 0.1.1
 author: Sean Eagan <seaneagan1@gmail.com>
 description: Like unix which(1).  Check for and locate installed executables.
 homepage: https://github.com/seaneagan/which.dart

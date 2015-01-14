@@ -1,9 +1,9 @@
 which [![pub package](http://img.shields.io/pub/v/which.svg)](https://pub.dartlang.org/packages/which) [![Build Status](https://drone.io/github.com/seaneagan/which.dart/status.png)](https://drone.io/github.com/seaneagan/which.dart/latest) [![Coverage Status](https://img.shields.io/coveralls/seaneagan/which.dart.svg)](https://coveralls.io/r/seaneagan/which.dart?branch=master)
 =====
 
-Check for and locate installed executables just like unix [which(1)][unix_which], except:
+Check for and locate installed executables.  Just like unix [which(1)][unix_which], except:
 
-* Doesn't shell out.
+* Doesn't shell out (fast).
 * Cross-platform (works on windows).  
 
 ## Install
