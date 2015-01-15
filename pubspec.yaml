@@ -9,5 +9,3 @@ dependencies:
 dev_dependencies:
   mockito: '>=0.8.1 <0.9.0'
   unittest: '>=0.11.4 <0.12.0'
-executables:
-  which: null
