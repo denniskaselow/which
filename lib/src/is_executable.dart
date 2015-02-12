@@ -24,7 +24,10 @@ bool isExecutableStat(FileStat stat, bool isWindows) {
   // There is no concept of executable on windows.
   if (isWindows) return true;
 
-  return hasPermission(stat.mode, FilePermission.EXECUTE, role: FilePermissionRole.WORLD);
-  // TODO: Also check for uid/gid permissions if/when that is supported:
+  // TODO: This currently produces false positives (returns true when it
+  //       shouldn't) when the uid/gid of current user and executable don't
+  //       match.  Fix if/when uid/gid support is added:
   //       http://dartbug.com/22037.
+  return FilePermissionRole.values.any((role) =>
+      hasPermission(stat.mode, FilePermission.EXECUTE, role: role));
 }

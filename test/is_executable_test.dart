@@ -40,33 +40,35 @@ main() {
     });
 
     test('true if has world execute permission', () {
-
-      var stat = new MockFileStat();
-
-      // A file.
-      when(stat.type).thenReturn(FileSystemEntityType.FILE);
-
-      // Last bit is world execute.
-      when(stat.mode).thenReturn(int.parse('000000000001', radix: 2));
-
-      var result = isExecutableStat(stat, false);
-
+      var result = isExecutableStat(_getMockFileStat('000000000001'), false);
       expect(result, isTrue);
     });
 
-    test('false if missing world execute permission', () {
+    test('true if has group execute permission', () {
+      var result = isExecutableStat(_getMockFileStat('000000001000'), false);
+      expect(result, isTrue);
+    });
 
-      var stat = new MockFileStat();
+    test('true if has owner execute permission', () {
+      var result = isExecutableStat(_getMockFileStat('000001000000'), false);
+      expect(result, isTrue);
+    });
 
-      // A file.
-      when(stat.type).thenReturn(FileSystemEntityType.FILE);
-
-      // Last bit is world execute.
-      when(stat.mode).thenReturn(int.parse('111111111110', radix: 2));
-
-      var result = isExecutableStat(stat, false);
-
+    test('false if has no execute permissions', () {
+      var result = isExecutableStat(_getMockFileStat('111110110110'), false);
       expect(result, isFalse);
     });
   });
+}
+
+MockFileStat _getMockFileStat(String mode) {
+  var stat = new MockFileStat();
+
+  // A file.
+  when(stat.type).thenReturn(FileSystemEntityType.FILE);
+
+  // Last bit is world execute.
+  when(stat.mode).thenReturn(int.parse(mode, radix: 2));
+
+  return stat;
 }
