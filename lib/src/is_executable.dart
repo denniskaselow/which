@@ -26,5 +26,5 @@ bool isExecutableStat(FileStat stat, bool isWindows) {
 
   return hasPermission(stat.mode, FilePermission.EXECUTE, role: FilePermissionRole.WORLD);
   // TODO: Also check for uid/gid permissions if/when that is supported:
-  //       https://dartbug.com/22037.
+  //       http://dartbug.com/22037.
 }
