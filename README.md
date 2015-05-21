@@ -1,4 +1,4 @@
-which [![pub package](http://img.shields.io/pub/v/which.svg)](https://pub.dartlang.org/packages/which) [![Build Status](https://travis-ci.org/dart-lang/which.svg?branch=master)](https://travis-ci.org/dart-lang/which) [![Coverage Status](https://coveralls.io/repos/dart-lang/when/badge.svg)](https://coveralls.io/r/dart-lang/when)
+which [![pub package](http://img.shields.io/pub/v/which.svg)](https://pub.dartlang.org/packages/which) [![Build Status](https://travis-ci.org/dart-lang/which.svg?branch=master)](https://travis-ci.org/dart-lang/which) [![Coverage Status](https://coveralls.io/repos/dart-lang/which/badge.svg)](https://coveralls.io/r/dart-lang/which)
 =====
 
 Check for and locate installed executables.  Just like unix [which(1)][unix_which], except:
