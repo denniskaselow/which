@@ -8,7 +8,7 @@ import 'dart:async';
 
 /// Transparently call `firstWhere` on a [Stream] or [Iterable].
 // TODO: Remove once https://dartbug.com/22028 is fixed.
-firstWhere(sequence, test, { orElse() }) => sequence is Iterable ?
+dynamic firstWhere(sequence, test, { orElse() }) => sequence is Iterable ?
   sequence.firstWhere(test, orElse: orElse) :
     _streamFirstWhere(sequence, test, orElse: orElse);
 
@@ -18,4 +18,4 @@ Future _streamFirstWhere(Stream stream, test(item), { orElse() }) {
 }
 
 /// The identity function simply returns its argument ([x]).
-identity(x) => x;
+dynamic identity(x) => x;
