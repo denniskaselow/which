@@ -7,7 +7,7 @@ library which.src.util;
 import 'dart:async';
 
 /// Transparently call `firstWhere` on a [Stream] or [Iterable].
-// TODO: Remove once https://dartbug.com/ is fixed.
+// TODO: Remove once https://dartbug.com/22028 is fixed.
 dynamic firstWhere(sequence, test, { orElse() }) => sequence is Iterable ?
   sequence.firstWhere(test, orElse: orElse) :
     _streamFirstWhere(sequence, test, orElse: orElse);
